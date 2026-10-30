@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ULAS Kecamatan Jaten</title>
+<style>
+  *{box-sizing:border-box}
+  html,body{margin:0;padding:0;background:#fff;color:#111;font-family:Inter,"Segoe UI",Roboto,Arial,sans-serif;font-size:16px}
+  .wrap{padding:30px 7% 40px}
+  .head{text-align:center}
+  .head img{height:62px;width:auto;display:block;margin:0 auto 12px}
+  .head h2{margin:0;font-size:28px;font-weight:700;letter-spacing:.2px}
+  .tabs{margin-top:34px;border-bottom:1px solid #ddd;display:flex;gap:16px}
+  .tabs button{background:none;border:0;padding:10px 2px 12px;font:inherit;font-size:17px;color:#333;cursor:pointer}
+  .tabs button.on{color:#d9000d;font-weight:500}
+  .cols{display:flex;gap:37px;margin-top:30px}
+  .col{flex:1;min-width:0}
+  label{display:block;font-weight:700;font-size:16px;margin:0 0 8px}
+  .f{margin-bottom:25px}
+  .in,select,textarea,.sel2{width:100%;height:50px;border:1px solid #ced4da;border-radius:8px;padding:0 16px;font:inherit;font-size:17px;color:#222;background:#fff;outline:none}
+  select{padding-right:10px;height:38px;border-radius:6px;font-size:17px}
+  .in:focus,select:focus,textarea:focus{border-color:#d9000d}
+  .in::placeholder,textarea::placeholder{color:#888}
+  textarea{height:105px;padding:14px 16px;resize:vertical}
+  .sel2{display:flex;align-items:center;justify-content:space-between;color:#222}
+  .sel2.ph{color:#888}
+  .sel2 .x{font-size:13px;font-weight:700;margin-left:auto;margin-right:14px;color:#222}
+  .sel2 .c{width:0;height:0;border-left:5px solid transparent;border-right:5px solid transparent;border-top:5px solid #777}
+  .btns{display:flex;gap:3px;margin-top:-6px}
+  .red{background:#d9000d;color:#fff;border:0;border-radius:6px;padding:0 18px;height:44px;font:inherit;font-weight:700;font-size:17px;cursor:pointer}
+  .req{color:#b32017;margin-top:26px;font-size:18px}
+  .cap{width:304px;height:78px;border:1px solid #d3d3d3;border-radius:3px;background:#f9f9f9;box-shadow:0 0 4px 1px rgba(0,0,0,.08);display:flex;align-items:center;justify-content:space-between;padding:0 12px;margin:0 0 14px}
+  .cap .l{display:flex;align-items:center;gap:16px;font-size:16px}
+  .cap .box{width:28px;height:28px;border:2px solid #c1c1c1;border-radius:2px;background:#fff}
+  .cap .r{text-align:center;font-size:10px;color:#555;line-height:1.2}
+  .cap svg{display:block;margin:0 auto 2px}
+  #p2{display:none;margin-top:30px}
+  .s{display:flex;gap:10px}
+  .s .in{flex:1}
+  @media(max-width:720px){.cols{flex-direction:column;gap:0}.cap{width:100%}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="head">
+    <img src="ulas-logo.png" alt="ULAS">
+    <h2>Kecamatan Jaten</h2>
+  </div>
+  <div class="tabs">
+    <button class="on" id="t1" type="button">Kirim Aspirasi</button>
+    <button id="t2" type="button">Pencarian Aspirasi</button>
+  </div>
+
+  <div id="p1">
+    <div class="cols">
+      <div class="col">
+        <div class="f"><label>Sifat Aduan</label>
+          <select><option>Publik</option><option>Rahasia</option></select></div>
+        <div class="f"><label>Judul</label><input class="in" type="text" placeholder="Judul keluhan"></div>
+        <div class="f"><label>Isi *</label><textarea placeholder="Isi dengan keluhan Anda... *"></textarea></div>
+        <div class="f"><label>Kategori *</label>
+          <div class="sel2"><span>Pelayanan Kecamatan/Kelurahan Wilayah Jaten</span><span style="display:flex;align-items:center"><span class="x">&times;</span><span class="c"></span></span></div></div>
+        <div class="f"><label>Kecamatan Aduan *</label>
+          <div class="sel2 ph"><span>-- Pilih Kecamatan --</span><span class="c"></span></div></div>
+        <div class="f"><label>Kelurahan Aduan *</label>
+          <div class="sel2 ph"><span>-- Pilih Kelurahan --</span><span class="c"></span></div></div>
+        <div class="btns">
+          <button class="red" type="button">&#128444;&#65039; Foto</button>
+          <button class="red" type="button">&#128205; Lokasi</button>
+        </div>
+        <p class="req">Kolom yang bertanda <b>*</b> wajib diisi.</p>
+      </div>
+      <div class="col">
+        <div class="f"><label>Nama Pengirim *</label><input class="in" type="text" placeholder="Nama Anda *"></div>
+        <div class="f"><label>Surel / Email *</label><input class="in" type="email" placeholder="Alamat email Anda *"></div>
+        <div class="f"><label>Telepon / HP *</label><input class="in" type="text" placeholder="Nomor telepon/handphone Anda *"></div>
+        <div class="f"><label>Jenis Kelamin *</label>
+          <select><option>-- Pilih --</option><option>Laki-laki</option><option>Perempuan</option></select></div>
+        <div class="f"><label>Domisili Pengirim *</label>
+          <select><option>-- Pilih --</option><option>Kabupaten Karanganyar</option><option>Luar Kabupaten Karanganyar</option></select></div>
+        <div class="f"><label>Kecamatan Pengirim *</label><input class="in" type="text" placeholder="Kecamatan Pengirim *"></div>
+        <div class="f"><label>Kelurahan Pengirim *</label><input class="in" type="text" placeholder="Kelurahan Pengirim *"></div>
+        <div class="cap">
+          <div class="l"><span class="box"></span><span>Saya bukan robot</span></div>
+          <div class="r">
+            <svg width="38" height="38" viewBox="0 0 64 64" aria-hidden="true"><path d="M32 6a26 26 0 0 1 22.5 13l-9 .1A17 17 0 0 0 32 15z" fill="#1c3aa9"/><path d="M54.5 19A26 26 0 0 1 45 54.4l-4.6-7.8a17 17 0 0 0 4.1-27.5z" fill="#4285f4"/><path d="M45 54.4A26 26 0 0 1 9.5 45l7.8-4.5a17 17 0 0 0 23.1 6.1z" fill="#ababab"/></svg>
+            reCAPTCHA
+          </div>
+        </div>
+        <button class="red" type="button">Kirim</button>
+      </div>
+    </div>
+  </div>
+
+  <div id="p2">
+    <div class="s"><input class="in" type="text" placeholder="Cari aspirasi..."><button class="red" type="button">Cari</button></div>
+  </div>
+</div>
+<script>
+  var t1=document.getElementById('t1'),t2=document.getElementById('t2'),p1=document.getElementById('p1'),p2=document.getElementById('p2');
+  function show(a){var one=a===1;p1.style.display=one?'':'none';p2.style.display=one?'none':'block';t1.className=one?'on':'';t2.className=one?'':'on';}
+  t1.onclick=function(){show(1)};t2.onclick=function(){show(2)};
+</script>
+</body>
+</html>
